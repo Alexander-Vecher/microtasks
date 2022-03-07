@@ -17,7 +17,7 @@ export let NewComponent = () => {
                     debugger
                     return (
 
-                        <tr key={index}>
+                        <tr key={index+1}>
                             <td>{el.manufacturer}</td>
                             <td>{el.model}</td>
                         </tr>
