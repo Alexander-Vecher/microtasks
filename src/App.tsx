@@ -1,5 +1,6 @@
 import React, {MouseEvent} from 'react';
 import './App.css';
+import {Button} from "./components/Button";
 
 
 export function App() {
@@ -15,7 +16,7 @@ export function App() {
 
     return (
         <div className="App">
-            <button onClick={() => onClickHandler('VASYA')}>MyYouTubeChanel-1</button>
+            <button onClick={() => onClickHandler('VASYA')}><Button/></button>
             <button onClick={() => onClickHandler('IVAN')}>MyYouTubeChanel-2</button>
         </div>
     )
