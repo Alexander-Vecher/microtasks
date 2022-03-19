@@ -10,14 +10,23 @@ export function App() {
     // const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
     //     console.log('Hellow Im IVAN!')
     // }
-    const onClickHandler = (name: string) => {
-        console.log(name)
+    /*const onClickHandler = (name: string) => {
+        console.log(name)*/
+    const ButtonFoo1 = (subscriber: string) => {
+        console.log(subscriber)
+    }
+    const ButtonFoo2 = (subscriber: string) => {
+        console.log(subscriber)
+    }
+    const ButtonFoo3 = () => {
+        console.log('im stupid button')
     }
 
     return (
         <div className="App">
-            <button onClick={() => onClickHandler('VASYA')}><Button/></button>
-            <button onClick={() => onClickHandler('IVAN')}>MyYouTubeChanel-2</button>
+            <Button name={'MyYouTubeChanel-1'} callBack={() => ButtonFoo1('im Vasya')}/>
+            <Button name={'MyYouTubeChanel-2'} callBack={() => ButtonFoo2('im Ivan')}/>
+            <Button name={'Stupid BUTTON'} callBack={ButtonFoo3}/>
         </div>
     )
 }
