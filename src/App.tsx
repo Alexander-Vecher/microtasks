@@ -1,45 +1,29 @@
-import React, {MouseEvent, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Button} from "./components/Button";
-
 
 export function App() {
-    // const myFirstSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
-    //     console.log('Hellow Im VASYA!')
-    // }
-    // const mySecondSubscriber = (event: MouseEvent<HTMLButtonElement>) => {
-    //     console.log('Hellow Im IVAN!')
-    // }
-    /*const onClickHandler = (name: string) => {
-        console.log(name)*/
-    const ButtonFoo1 = (subscriber: string) => {
-        console.log(subscriber)
-    }
-    const ButtonFoo2 = (subscriber: string) => {
-        console.log(subscriber)
-    }
-    const ButtonFoo3 = () => {
-        console.log('im stupid button')
-    }
+    const [money, setMoney] = useState([
+        {banknots: 'Dollars ', value: 100, number: ' a1234567890'},
+        {banknots: 'Dollars ', value: 50, number: ' z1234567890'},
+        {banknots: 'RUBLS ', value: 100, number: ' w1234567890'},
+        {banknots: 'Dollars ', value: 100, number: ' e1234567890'},
+        {banknots: 'Dollars ', value: 50, number: ' c1234567890'},
+        {banknots: 'RUBLS ', value: 100, number: ' r1234567890'},
+        {banknots: 'Dollars ', value: 50, number: ' x1234567890'},
+        {banknots: 'RUBLS ', value: 50, number: ' v1234567890'},
+    ])
+let currentMoney= money.filter((filteredMoney)=>filteredMoney.banknots==='RUBLS ')
 
-    let [a, setA] = useState(1)
-    const onClick = () => {
-        setA(++a)
-        console.log(a)
-    }
-
-    const onClick1 = () => {
-        setA(a = 0)
-    }
     return (
-        <div className="App">
-            <h1>{a}</h1>
-            <Button name={'MyYouTubeChanel-1'} callBack={() => ButtonFoo1('im Vasya')}/>
-            <Button name={'MyYouTubeChanel-2'} callBack={() => ButtonFoo2('im Ivan')}/>
-            <Button name={'Stupid BUTTON'} callBack={ButtonFoo3}/>
-            <button onClick={onClick}>number</button>
-            <button onClick={onClick1}>0</button>
-        </div>
-    )
+        <ul>
+            {currentMoney.map((objFromMoneyArr, index) => {
+                return (<li key={index} >
+                        <span>{objFromMoneyArr.banknots}</span>
+                        <span>{objFromMoneyArr.value}</span>
+                        <span>{objFromMoneyArr.number}</span>
+                    </li>
+                )
+            })
+            }
+        </ul>)
 }
-
