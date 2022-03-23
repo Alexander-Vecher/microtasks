@@ -23,7 +23,8 @@ export function App() {
                         <span>{objFromMoneyArr.number}</span>
                     </li>
                 )
-            })
+            }
+            )
             }
         </ul>)
 }
