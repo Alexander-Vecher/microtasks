@@ -17,13 +17,13 @@ export function App() {
     return (
         <ul>
             {currentMoney.map((objFromMoneyArr, index) => {
-                return (<li key={index}>
-                        <span>{objFromMoneyArr.banknots}</span>
-                        <span>{objFromMoneyArr.value}</span>
-                        <span>{objFromMoneyArr.number}</span>
-                    </li>
-                )
-            }
+                    return (<li key={index}>
+                            <span>{objFromMoneyArr.banknots}</span>
+                            <span>{objFromMoneyArr.value}</span>
+                            <span>{objFromMoneyArr.number}</span>
+                        </li>
+                    )
+                }
             )
             }
         </ul>)
