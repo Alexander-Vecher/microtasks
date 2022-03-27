@@ -15,16 +15,23 @@ export function App() {
     let currentMoney = money.filter((filteredMoney) => filteredMoney.banknots === 'RUBLS ')
 
     return (
-        <ul>
-            {currentMoney.map((objFromMoneyArr, index) => {
-                    return (<li key={index}>
-                            <span>{objFromMoneyArr.banknots}</span>
-                            <span>{objFromMoneyArr.value}</span>
-                            <span>{objFromMoneyArr.number}</span>
-                        </li>
-                    )
+        <>
+            <ul>
+                {currentMoney.map((objFromMoneyArr, index) => {
+                        return (<li key={index}>
+                                <span>{objFromMoneyArr.banknots}</span>
+                                <span>{objFromMoneyArr.value}</span>
+                                <span>{objFromMoneyArr.number}</span>
+                            </li>
+                        )
+                    }
+                )
                 }
-            )
-            }
-        </ul>)
+            </ul>
+            <div style={{marginLeft:'40px'}}>
+                <button>all</button>
+                <button>ruble</button>
+                <button>dollar</button>
+            </div>
+        </>)
 }
