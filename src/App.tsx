@@ -28,7 +28,7 @@ export function App() {
                 )
                 }
             </ul>
-            <div style={{marginLeft:'40px'}}>
+            <div style={{marginLeft: '40px'}}>
                 <button>all</button>
                 <button>ruble</button>
                 <button>dollar</button>
