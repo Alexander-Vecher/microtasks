@@ -30,6 +30,7 @@ export function App() {
                         )
                     }
                 )
+
                 }
             </ul>
             <div style={{marginLeft: '40px'}}>
