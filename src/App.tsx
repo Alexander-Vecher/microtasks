@@ -17,7 +17,6 @@ export function App() {
     const onClickFilterHandler = (nameButton: string) => {
         console.log(nameButton)
     }
-
     return (
         <>
             <ul>
