@@ -31,6 +31,7 @@ export function App() {
                 )
                 }
             </ul>
+
             <div style={{marginLeft: '40px'}}>
                 <button onClick={() => onClickFilterHandler(nameButton:'all')}>all</button>
                 <button onClick={() => onClickFilterHandler(nameButton:'ruble')}>ruble</button>
