@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import {NewComponent} from "./NewComponent";
 function App() {
+    const students = [
+        {id:1, name:'James', age:8},
+        {id:2, name:'Robert', age:12},
+        {id:3, name:'Mikhael', age:13},
+        {id:4, name:'William', age:16},
+        {id:5, name:'Charles', age:7},
+    ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <NewComponent/>  {/*AAA={students}*/}
     </div>
   );
 }
