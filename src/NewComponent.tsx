@@ -21,38 +21,20 @@ type StudentType = {
 export const NewComponent = (/*props: topCars*/) => {
 
     const topCars = [
-        {manufacturer:'BMW', model:'m5cs'},
-        {manufacturer:'Mercedes', model:'e63s'},
-        {manufacturer:'Audi', model:'rs6'}
+        {manufacturer: 'BMW', model: 'm5cs'},
+        {manufacturer: 'Mercedes', model: 'e63s'},
+        {manufacturer: 'Audi', model: 'rs6'}
     ]
 
-return (
+    return (
         <table>
-        <tr>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-</tr>
-    <tr>
-        <td>{topCars[0].model}</td>
-        <td>{topCars[1].model}</td>
-        <td>{topCars[2].model}</td>
-    </tr>
-    <tr>
-        <td>{topCars[0].manufacturer}</td>
-        <td>{topCars[1].manufacturer}</td>
-        <td>{topCars[2].manufacturer}</td>
-    </tr>
-</table>
-)
-
-   /* return (
-        <ul>
-            {props.AAA.map((el,index:number) => {
+            {topCars.map((el, index) => {
                 return (
-                    <li key={el.id}>{el.name}</li>)
-
+                    <tr key={index}>
+                        <th>{index+1}</th>
+                        <td>{el.manufacturer}</td>
+                        <td>{el.model}</td>
+                    </tr>)
             })}
-        </ul>
-    )*/
-}
+        </table>
+    )}
