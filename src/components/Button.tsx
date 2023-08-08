@@ -1,9 +1,8 @@
-
-type NameProps= {
-    name:string
+type NameProps = {
+    name: string
 }
 
-export const Button =(props:NameProps)=> {
+export const Button = (props: NameProps) => {
     return (
         <button>"{props.name}</button>
     )
