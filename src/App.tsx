@@ -5,27 +5,33 @@ import './App.css';
 
 function App() {
 
+    const [money, setMoney] = useState([
+        {banknots: 'Dollars', value: 100, number: ' a1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' z1234567890'},
+        {banknots: 'RUBLS', value: 100, number: ' w1234567890'},
+        {banknots: 'Dollars', value: 100, number: ' e1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' c1234567890'},
+        {banknots: 'RUBLS', value: 100, number: ' r1234567890'},
+        {banknots: 'Dollars', value: 50, number: ' x1234567890'},
+        {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
+    ])
+let currentMoney= money.filter((filteredMoney)=>filteredMoney.banknots==='RUBLS')
+    return (
+        <ul>
+            {currentMoney.map((objFromMoneyArr, index) => {
+                return (
+                    <li key={index}>
+                        <span> {objFromMoneyArr.banknots}</span>
+                        <span> {objFromMoneyArr.value}</span>
+                        <span> {objFromMoneyArr.number}</span>
+                    </li>
+                )
+                }
+            )}
+                </ul>
 
-    let[a,setA] = useState(1)
 
-
-    const onClickHundler = () => {
-        setA(++a)
-        /*console.log(a)*/
-    }
-    const onClickHundler2 = () => {
-        setA(a=0)
-        /*console.log(a)*/
-    }
-
-    return (<div>
-            <h1>
-                {a}
-            </h1>
-            <button onClick={onClickHundler}>number</button>
-            <button onClick={onClickHundler2}>0</button>
-        </div>
-    );
+)
 }
 
 
