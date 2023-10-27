@@ -16,6 +16,7 @@ export const NewComponent = (props:Current) => {
                                 <span> {objFromMoneyArr.value}</span>
                                 <span> {objFromMoneyArr.number}</span>
                             </li>
+
                         )
                     }
                 )}
