@@ -1,8 +1,46 @@
 import React, {useState} from 'react';
 import './App.css';
-import {NewComponent} from "./NewComponent";
+import {FullInput} from "./components/FullInput";
+/*import {NewComponent} from "./NewComponent";*/
 
-/*import {Button} from "./components/Button";*/
+function App() {
+    const [message, setMessage] = useState([
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'},
+            {message: 'message4'},
+            {message: 'message5'}
+        ]
+    )
+    const onClickHandler=(title:string)=> {
+        let NewMessage= {message: title}
+
+        setMessage([ NewMessage, ...message])
+    }
+    return (
+
+        <div className="App">
+
+            <FullInput onClickHandler={onClickHandler}/>
+            {message.map((el, index) => {
+                return (
+                    <div key={index}>{el.message}</div>
+                )
+            })}
+        </div>
+    );
+}
+
+export default App;
+
+
+
+
+
+
+
+/*
+/!*import {Button} from "./components/Button";*!/
 type Type={
 banknots: string;
     value: number;
@@ -38,7 +76,7 @@ function App() {
  }
     return (
         <NewComponent Mmoney={currentMoney} MMmoney={onClickFilter}/>
-        /*<>
+        /!*<>
         <ul>
             {currentMoney.map((objFromMoneyArr, index) => {
                 return (
@@ -54,9 +92,10 @@ function App() {
 <button onClick={()=>onClickFilter('all')}>all</button>
 <button onClick={()=>onClickFilter('ruble')}>ruble</button>
 <button onClick={()=>onClickFilter('dollars')}>dollar</button>
-        </>*/
+        </>*!/
 )
 }
 
 
 export default App;
+*/
