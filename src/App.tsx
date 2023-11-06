@@ -1,9 +1,80 @@
 import React, {useState} from 'react';
 import './App.css';
+import {Input2} from "./components/Input2";
+import {Button2} from "./components/Button2";
+/*import {FullInput2} from "./components/FullInput2";*/
+
+
+
+
+function App() {
+    const [message, setMessage] = useState([
+            {message: 'message1'},
+            {message: 'message2'},
+            {message: 'message3'},
+            {message: 'message4'},
+            {message: 'message5'}
+        ]
+    )
+
+let [title, setTitle]= useState('')
+    /*const callBack=(title:string)=>{
+        const newMessage={message: title};
+        setMessage([newMessage, ...message])
+    }
+
+*/
+
+    const Function=()=>{
+        const newMessage={message: title};
+        setMessage([newMessage, ...message])
+        setTitle('')
+}
+
+
+
+
+        return (
+        <div className="App">
+            <div>
+               {/* <FullInput2 callBack={callBack}/>*/}
+                <Input2 setTitle={setTitle} title={title}/>
+                <Button2 callBack={Function}/>
+            </div>
+            {message.map((el, index) => {
+                return (
+                    <div key={index}>{el.message}</div>
+                )
+            })}
+        </div>
+    )
+}
+
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import {Button} from "./components/Button";
 import {Input} from "./components/Input";
-/*import {FullInput} from "./components/FullInput";*/
-/*import {NewComponent} from "./NewComponent";*/
+import {FullInput} from "./components/FullInput";
+/!*import {NewComponent} from "./NewComponent";*!/
 
 function App() {
     const [message, setMessage] = useState([
@@ -16,18 +87,22 @@ function App() {
     )
 
     let [title, setTitle] = useState("")
-    const callBack=(title:string)=> {
+    const onClickHandler=(title:string)=> {
         let NewMessage= {message: title}
 
         setMessage([NewMessage, ...message])
+    }
+    const callBack=()=> {
+        onClickHandler(title)
+        setTitle('')
     }
     return (
 
         <div className="App">
 
-            {/*<FullInput onClickHandler={onClickHandler}/>*/}
+            {/!*<FullInput onClickHandler={onClickHandler}/>*!/}
             <Input setTitle={setTitle} title={title} />
-            <Button callBack={callBack} title={title}/>
+            <Button callBack={callBack} title={title} />
             {message.map((el, index) => {
                 return (
                     <div key={index}>{el.message}</div>
@@ -38,6 +113,7 @@ function App() {
 }
 
 export default App;
+*/
 
 
 

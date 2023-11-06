@@ -10,6 +10,7 @@ export const Input = (props:InputTypeProps) => {
     const onChageButtonHundler=(event: ChangeEvent<HTMLInputElement>)=>{
         props.setTitle(event.currentTarget.value)
     }
+
     return (
         <input value= {props.title} onChange={onChageButtonHundler}/>
     );
